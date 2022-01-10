@@ -9,7 +9,10 @@ refPt = []
 cropping = False
 # videoFile = "20211022102003117.mp4"
 # videoFile = "192.168.1.64_01_20211026152332696.mp4"
+useVideo = False
+
 videoFile = "./video/02.mp4"
+videoUrl = "rtsp://admin:kalix123@192.168.0.64:554/Streaming/channels/101/"
 
 
 def click_and_crop(event, x, y, flags, param):
@@ -39,7 +42,11 @@ def click_and_crop(event, x, y, flags, param):
 # load the image, clone it, and setup the mouse callback function
 # image = cv2.imread(args["image"])
 # img_clone = image.copy()
-cap = cv2.VideoCapture(videoFile)
+if useVideo:
+    cap = cv2.VideoCapture()
+    cap.open(videoUrl)
+else:
+    cap = cv2.VideoCapture(videoFile)
 cv2.namedWindow("image")
 cv2.setMouseCallback("image", click_and_crop)
 # keep looping until the 'q' key is pressed

@@ -10,3 +10,7 @@ savevideo.py
 #### 核心主程序在guolu.py里面
 >  
 
+> install to 树莓派
+> 标定视频流--->已完成
+
+
