@@ -46,7 +46,7 @@ def getColor():
 
 
 def writeScale(*values):
-
+    config.read('set.cfg')
     x, y, w, h = values
     config['default'] = {
         "x": x, "y": y,
@@ -60,5 +60,6 @@ def writeScale(*values):
 if __name__ == "__main__":
     # mylist = [10, 20, 30, 40]
     # writeScale(*mylist)
-    print(getColor())
+    # print(getColor())
+    writeScale(1,2,3,4)
     # print(getAxis())
